@@ -1,0 +1,49 @@
+{% load static %}
+{% load news_extras %}
+
+
+
+{% if articles %}
+    {% for article in articles %}
+    <!-- Blog Post -->
+    <div class="col-sm-12 d-sm-flex kartica">
+        {% if article.image.thumbnail.contentUrl %}
+            <div class="col-sm-3 px-0"> 
+                <img class="img-fluid" src="{{article.image.thumbnail.contentUrl}}" style="height: 115px; width: 204px;">
+            </div>
+            <div class="col-sm-9">
+                <h5 class="mt-1"><a href="{{article.url}}" title="">{{article.name}}</a></h4>
+                <p>{{article.description}}</p>
+                <div class="mt-3">
+                    <small><i class="fa fa-calendar"></i> {{article.datePublished|parseDate}}</small>
+                    <small class="float-right"><i class="fa fa-file-text-o"></i> <a href="#"> {{article.provider.0.name}}</a></small>
+                </div>
+            </div>
+        {% else %}
+            <div class="col-sm-12">
+                <h5 class="mt-1"><a href="{{article.url}}" title="">{{article.name}}</a></h4>
+                <p>{{article.description}}</p>
+                <div class="mt-3">
+                    <small><i class="fa fa-calendar"></i> {{article.datePublished|parseDate}}</small>
+                    <small class="float-right"><i class="fa fa-file-text-o"></i> <a href="#"> {{article.provider.0.name}}</a></small>
+                </div>
+            </div>
+        {% endif %}
+    </div> 
+    <!-- Endblog Post -->
+    {% endfor %}
+    {% else %}
+        {% if query %}
+            <h5>No results for {{query}}</h5>
+        {% endif %}
+{% endif %}
+
+<br>
+
+<ul class="list-unstyled mb-0">
+    {% for term in recent_searches %}
+        <li>
+          <a href="#">{{term}}</a>
+        </li>
+    {% endfor %}
+  </ul>

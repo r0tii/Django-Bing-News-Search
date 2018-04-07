@@ -1,0 +1,46 @@
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+    background-color: #f8f8f8;
+  }
+}
+
+.bg-bordo {
+    background: linear-gradient(to right, #480048, #C04848);
+    color: white;
+}
+
+nav.bg-bordo {
+  border-bottom: 5px solid #FFC107;
+}
+
+.bg-bordo a {
+  color: white;
+}
+
+.kartica {
+  background-color: #fff;
+  padding: 10px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #e1e8ed;
+}
+
+.kartica h5 {
+  font-size: 15px;
+}
+
+.kartica p {
+  font-size: 13px;
+  max-height: 34px;
+  overflow: hidden;
+  color: #444;
+  line-height: 17px;
+  margin: 8px 0 0 0;
+}
+
