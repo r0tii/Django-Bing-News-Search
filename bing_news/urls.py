@@ -10,6 +10,4 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
 ]
 
-if settings.DEBUG:
-    import debug_toolbar
-    urlpatterns = [url(r'^__debug__/', include(debug_toolbar.urls)),] + urlpatterns
+
