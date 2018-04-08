@@ -102,7 +102,6 @@
       $(document).ready(function(){
         $('#forma').submit(function(event){
           event.preventDefault();
-          console.log($(this).serialize());
           $.ajax({
             url: '/',
             method: 'POST',
@@ -113,7 +112,6 @@
 
               $('#searchresults').html(search_results);
               $('.searches').html(recent_searches);
-              console.log(search_results, recent_searches);
             },
           });
         });
